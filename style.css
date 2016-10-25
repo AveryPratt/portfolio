@@ -1,3 +1,71 @@
+* {
+  margin: 0px;
+}
+
+body {
+  margin: 10px;
+}
+
+.headerDiv {
+  text-align: center;
+}
+
 .hamburger {
+  margin: 16px;
+  width: 40px;
+  float: right;
+}
+
+h1 {
+  padding: 13px;
+  font-size: 24px;
+}
+
+.logo {
+  float: left;
   width: 50px;
+}
+
+nav {
+  clear: both;
+}
+
+@media only screen and (min-width: 380px){
+  .hamburger {
+    margin: 16px;
+    width: 60px;
+    float: right;
+  }
+
+  h1 {
+    padding: 18px;
+    font-size: 36px;
+  }
+
+  .logo {
+    float: left;
+    width: 75px;
+  }
+}
+
+@media only screen and (min-width: 500px) {
+  .hamburger {
+    margin: 16px;
+    width: 80px;
+    float: right;
+  }
+
+  h1 {
+    padding: 26px;
+    font-size: 48px;
+  }
+
+  .logo {
+    float: left;
+    width: 100px;
+  }
+}
+
+@media only screen and (min-width: ){
+
 }
