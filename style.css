@@ -21,6 +21,14 @@ h1 {
   font-size: 24px;
 }
 
+h2 {
+  color: #0000ff;
+}
+
+h3 {
+  color: #008080;
+}
+
 .logo {
   float: left;
   width: 50px;
@@ -28,13 +36,33 @@ h1 {
 
 nav {
   clear: both;
+  display: none;
+}
+
+p {
+  margin: 20px;
+}
+
+a {
+
+}
+
+li {
+  list-style-type: none;
+  background-color: #cccccc;
+  padding: 10px 20px;
+  border-left: 1px solid #000000;
+  border-right: 1px solid #000000;
+}
+
+section.template{
+  display: none;
 }
 
 @media only screen and (min-width: 380px){
   .hamburger {
     margin: 16px;
     width: 60px;
-    float: right;
   }
 
   h1 {
@@ -43,29 +71,22 @@ nav {
   }
 
   .logo {
-    float: left;
     width: 75px;
   }
 }
 
-@media only screen and (min-width: 500px) {
-  .hamburger {
-    margin: 16px;
-    width: 80px;
+@media only screen and (min-width: 715px){
+  nav {
+    display: inherit;
     float: right;
+    clear: none;
   }
 
-  h1 {
-    padding: 26px;
-    font-size: 48px;
+  .hamburger {
+    display: none;
   }
 
-  .logo {
-    float: left;
-    width: 100px;
+  li {
+    display: inline;
   }
-}
-
-@media only screen and (min-width: ){
-
 }
