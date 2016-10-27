@@ -3,12 +3,13 @@
 }
 
 body {
+  background-color: #ffcc99;
   margin: 10px;
 }
 
 h1 {
-  padding: 13px;
-  font-size: 24px;
+  color: #000000;
+  font-family: 'Yatra One', cursive;
 }
 
 h2 {
@@ -21,4 +22,23 @@ h3 {
 
 p {
   margin: 20px;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+  background-color: #808080;
+  padding: 10px 20px;
+  border-left: 1px solid #000000;
+  border-right: 1px solid #000000;
+}
+
+.section {
+  margin-right: 10px;
+  box-shadow: 10px 10px 10px #000000;
+  background-color: #ffffff;
 }

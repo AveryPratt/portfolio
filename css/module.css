@@ -1,9 +1,6 @@
-li {
-  list-style-type: none;
-  background-color: #cccccc;
-  padding: 10px 20px;
-  border-left: 1px solid #000000;
-  border-right: 1px solid #000000;
+h1 {
+  padding: 13px;
+  font-size: 24px;
 }
 
 .hamburger {
@@ -17,7 +14,7 @@ li {
   width: 50px;
 }
 
-@media only screen and (min-width: 380px){
+@media only screen and (min-width: 420px){
   .hamburger {
     margin: 15px;
     width: 60px;
@@ -34,12 +31,20 @@ li {
 }
 
 @media only screen and (min-width: 715px){
+  h1 {
+    font-size: 48px;
+  }
+
   nav {
     display: inherit;
   }
 
   .hamburger {
     display: none;
+  }
+
+  .logo {
+    width: 100px;
   }
 
   li {
