@@ -1,0 +1,53 @@
+h1 {
+  padding: 13px;
+  font-size: 24px;
+}
+
+.hamburger {
+  margin: 10px;
+  width: 40px;
+  float: right;
+}
+
+.logo {
+  float: left;
+  width: 50px;
+}
+
+@media only screen and (min-width: 420px){
+  .hamburger {
+    margin: 15px;
+    width: 60px;
+  }
+
+  h1 {
+    padding: 18px;
+    font-size: 36px;
+  }
+
+  .logo {
+    width: 75px;
+  }
+}
+
+@media only screen and (min-width: 715px){
+  h1 {
+    font-size: 48px;
+  }
+
+  nav {
+    display: inherit;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .logo {
+    width: 100px;
+  }
+
+  li {
+    display: inline;
+  }
+}

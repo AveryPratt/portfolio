@@ -3,15 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>Portfolio</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Yatra+One" rel="stylesheet">
+    <link rel="stylesheet" href="css/base.css" type="text/css">
+    <link rel="stylesheet" href="css/layout.css" type="text/css">
+    <link rel="stylesheet" href="css/module.css" type="text/css">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
   </head>
   <body id="body">
     <header>
       <div class="headerDiv">
-        <img class="logo" src="logo.png" alt="Logo" />
+        <img class="logo" src="imgs/profilepic.jpg" alt="Logo" />
         <a>
-          <img class="hamburger" src="hamburger.png" alt="Menu" />
+          <img class="hamburger" src="imgs/hamburger.png" alt="Menu" />
         </a>
         <h1>Avery Pratt</h1>
       </div>
@@ -19,14 +22,14 @@
         <ul class="navList">
           <li><a href="https://github.com/AveryPratt">Github</a></li>
           <li><a href="https://www.facebook.com/avery.pratt">Facebook</a></li>
-          <li><a href="#aboutme">About Me</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#resume">Resume</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a class="local" data-content="aboutme" href="#">About Me</a></li>
+          <li><a class="local" data-content="projects" href="#">Projects</a></li>
+          <li><a class="local" data-content="resume" href="#">Resume</a></li>
+          <li><a class="local" data-content="contact" href="#">Contact</a></li>
         </ul>
       </nav>
     </header>
-    <section id="aboutme">
+    <section class="section" id="aboutme">
       <h2>About Me</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tristique lorem vel rutrum fringilla. Etiam varius ornare ante. Mauris vulputate quam vel condimentum consequat. Proin ac tellus eget lectus interdum tempor a id massa. Sed faucibus consectetur rhoncus. Vivamus eget pharetra sapien. Nam blandit in dolor eu gravida. Ut arcu ex, accumsan nec mi ac, pellentesque viverra massa. Nulla vulputate porta velit, non rutrum quam cursus eu. Aliquam erat volutpat. Phasellus eu elit non justo porta finibus. Nulla aliquam in ligula sit amet malesuada.
@@ -35,7 +38,7 @@
       </p>
       <a href="#body">Top</a>
     </section>
-    <section id="projects">
+    <section class="section" id="projects">
       <h2>Projects</h2>
       <div class="container">
         <div class="template">
@@ -45,7 +48,7 @@
       </div>
       <a href="#body">Top</a>
     </section>
-    <section id="resume">
+    <section class="section" id="resume">
       <h2>Resume</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tristique lorem vel rutrum fringilla. Etiam varius ornare ante. Mauris vulputate quam vel condimentum consequat. Proin ac tellus eget lectus interdum tempor a id massa. Sed faucibus consectetur rhoncus. Vivamus eget pharetra sapien. Nam blandit in dolor eu gravida. Ut arcu ex, accumsan nec mi ac, pellentesque viverra massa. Nulla vulputate porta velit, non rutrum quam cursus eu. Aliquam erat volutpat. Phasellus eu elit non justo porta finibus. Nulla aliquam in ligula sit amet malesuada.
@@ -54,13 +57,14 @@
       </p>
       <a href="#body">Top</a>
     </section>
-    <section id="contact">
+    <section class="section" id="contact">
       <h2>Contact</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tristique lorem vel rutrum fringilla. Etiam varius ornare ante. Mauris vulputate quam vel condimentum consequat. Proin ac tellus eget lectus interdum tempor a id massa. Sed faucibus consectetur rhoncus. Vivamus eget pharetra sapien. Nam blandit in dolor eu gravida. Ut arcu ex, accumsan nec mi ac, pellentesque viverra massa. Nulla vulputate porta velit, non rutrum quam cursus eu. Aliquam erat volutpat. Phasellus eu elit non justo porta finibus. Nulla aliquam in ligula sit amet malesuada.
       </p>
       <a href="#body">Top</a>
     </section>
-    <script type="text/javascript" src="projects.js"></script>
+    <script type="text/javascript" src="js/my_projects.js"></script>
+    <script type="text/javascript" src="js/projects.js"></script>
   </body>
 </html>

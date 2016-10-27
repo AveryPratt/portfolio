@@ -1,0 +1,30 @@
+.headerDiv {
+  text-align: center;
+}
+
+section.template{
+  display: none;
+}
+
+.section {
+  padding: 20px;
+  margin-top: 50px;
+}
+
+nav {
+  float: right;
+  clear: none;
+  display: none;
+}
+
+/*header {
+  position: fixed;
+}*/
+
+@media only screen and (min-width: 420px){
+
+}
+
+@media only screen and (min-width: 715px){
+
+}
