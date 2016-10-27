@@ -1,0 +1,24 @@
+* {
+  margin: 0px;
+}
+
+body {
+  margin: 10px;
+}
+
+h1 {
+  padding: 13px;
+  font-size: 24px;
+}
+
+h2 {
+  color: #0000ff;
+}
+
+h3 {
+  color: #008080;
+}
+
+p {
+  margin: 20px;
+}

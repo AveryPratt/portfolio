@@ -1,0 +1,48 @@
+li {
+  list-style-type: none;
+  background-color: #cccccc;
+  padding: 10px 20px;
+  border-left: 1px solid #000000;
+  border-right: 1px solid #000000;
+}
+
+.hamburger {
+  margin: 10px;
+  width: 40px;
+  float: right;
+}
+
+.logo {
+  float: left;
+  width: 50px;
+}
+
+@media only screen and (min-width: 380px){
+  .hamburger {
+    margin: 15px;
+    width: 60px;
+  }
+
+  h1 {
+    padding: 18px;
+    font-size: 36px;
+  }
+
+  .logo {
+    width: 75px;
+  }
+}
+
+@media only screen and (min-width: 715px){
+  nav {
+    display: inherit;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  li {
+    display: inline;
+  }
+}
