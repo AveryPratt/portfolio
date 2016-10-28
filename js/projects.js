@@ -6,11 +6,14 @@ function Project(options){
 }
 
 Project.prototype.toHTML = function(options){
-  var $newProject = $('div.template').clone();
-  $newProject.find('h3').text(this.title);
-  $newProject.find('p').text(this.description);
-  $newProject.removeAttr('class');
-  return $newProject;
+  // var $newProject = $('div.template').clone();
+  // $newProject.find('h3').text(this.title);
+  // $newProject.find('p').text(this.description);
+  // $newProject.removeAttr('class');
+  // return $newProject;
+  var source = $('#projects-template').html();
+  var templateRender = Handlebars.compile(source);
+  return templateRender(this);
 }
 
 myProjects.forEach(function(ele) {
@@ -18,7 +21,7 @@ myProjects.forEach(function(ele) {
 });
 
 projects.forEach(function(project) {
-  $('div.container').append(project.toHTML());
+  $('section#projects').append(project.toHTML());
 });
 
 var articleView = {

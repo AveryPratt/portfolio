@@ -40,13 +40,14 @@
     </section>
     <section class="section" id="projects">
       <h2>Projects</h2>
-      <div class="container">
-        <div class="template">
-          <h3></h3>
-          <p></p>
+      <script id="projects-template" type="text/x-handlebars-template">
+        <div class="container">
+          <div class="template">
+            <h3>{{title}}</h3>
+            <p>{{description}}</p>
+          </div>
         </div>
-      </div>
-      <a href="#body">Top</a>
+      </script>
     </section>
     <section class="section" id="resume">
       <h2>Resume</h2>
@@ -64,6 +65,7 @@
       </p>
       <a href="#body">Top</a>
     </section>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
     <script type="text/javascript" src="js/my_projects.js"></script>
     <script type="text/javascript" src="js/projects.js"></script>
   </body>
