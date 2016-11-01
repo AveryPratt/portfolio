@@ -1,3 +1,5 @@
+'use strict';
+
 var projects = [];
 
 function Project(options){
@@ -5,24 +7,55 @@ function Project(options){
   this.description = options.description;
 }
 
-Project.prototype.toHTML = function(options){
-  // var $newProject = $('div.template').clone();
-  // $newProject.find('h3').text(this.title);
-  // $newProject.find('p').text(this.description);
-  // $newProject.removeAttr('class');
-  // return $newProject;
+Project.prototype.toHTML = function(){
   var source = $('#projects-template').html();
   var templateRender = Handlebars.compile(source);
   return templateRender(this);
+};
+
+function loadProjects(data){
+  for (var i = 0; i < data.length; i++) {
+    projects.push(new Project(data[i]));
+  }
+}
+function renderIndexPage(){
+  projects.forEach(function(project) {
+    $('section#projects').append(project.toHTML());
+  });
 }
 
-myProjects.forEach(function(ele) {
-  projects.push(new Project(ele));
-});
+function fetchProjects() {
+  if (localStorage.projects) {
+    $.ajax({
+      type: 'HEAD',
+      url: 'data/projects.json',
+      complete: function(xhr) {
+        var newETag = xhr.getResponseHeader('eTag');
+        if(newETag === localStorage.getItem('eTag')){
+          data = localStorage.getItem('projects');
+          var parsedData = JSON.parse(data);
+          loadProjects(parsedData);
+          renderIndexPage();
+        }
+        else{
+          getNewProjects();
+        }
+      }
+    });
+  } else {
+    getNewProjects();
+  }
+};
+function getNewProjects(){
+  $.getJSON( 'data/projects.json', function(data, msg, xhr) {
+    loadProjects(data);
+    var stringData = JSON.stringify(data);
+    localStorage.setItem('blogArticles', stringData);
+    renderIndexPage();
+    localStorage.setItem('eTag', xhr.getResponseHeader('eTag'));
+  });
+}
 
-projects.forEach(function(project) {
-  $('section#projects').append(project.toHTML());
-});
 
 var articleView = {
   handleMainNav: function () {
@@ -32,5 +65,6 @@ var articleView = {
     });
     $('nav .local:first').click();
   }
-}
+};
 articleView.handleMainNav();
+fetchProjects();
