@@ -5,26 +5,43 @@ var projects = [];
 function Project(options){
   this.title = options.title;
   this.description = options.description;
+  this.wordCount = countWordsInDescription(options);
 }
-
 Project.prototype.toHTML = function(){
   var source = $('#projects-template').html();
   var templateRender = Handlebars.compile(source);
   return templateRender(this);
 };
 
+function countWordsInDescription(project){
+  return 'Words: ' + project.description.split(' ')
+  .map(function(){
+    return 1;
+  })
+  .reduce(function(count, increment){
+    return count + increment;
+  }, 0);
+}
 function loadProjects(data){
-  for (var i = 0; i < data.length; i++) {
-    projects.push(new Project(data[i]));
-  }
+  data.forEach(function(item){
+    projects.push(new Project(item));
+  });
 }
 function renderIndexPage(){
   projects.forEach(function(project) {
     $('section#projects').append(project.toHTML());
   });
 }
-
-function fetchProjects() {
+function getNewProjects(){
+  $.getJSON( 'data/projects.json', function(data, msg, xhr) {
+    loadProjects(data);
+    var stringData = JSON.stringify(data);
+    localStorage.setItem('blogArticles', stringData);
+    renderIndexPage();
+    localStorage.setItem('eTag', xhr.getResponseHeader('eTag'));
+  });
+}
+(function fetchProjects() {
   if (localStorage.projects) {
     $.ajax({
       type: 'HEAD',
@@ -45,26 +62,4 @@ function fetchProjects() {
   } else {
     getNewProjects();
   }
-};
-function getNewProjects(){
-  $.getJSON( 'data/projects.json', function(data, msg, xhr) {
-    loadProjects(data);
-    var stringData = JSON.stringify(data);
-    localStorage.setItem('blogArticles', stringData);
-    renderIndexPage();
-    localStorage.setItem('eTag', xhr.getResponseHeader('eTag'));
-  });
-}
-
-
-var articleView = {
-  handleMainNav: function () {
-    $('nav').on('click', '.local', function() {
-      $('.section').hide();
-      $('#' + $(this).data('content')).fadeIn();
-    });
-    $('nav .local:first').click();
-  }
-};
-articleView.handleMainNav();
-fetchProjects();
+}());

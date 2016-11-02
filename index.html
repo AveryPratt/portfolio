@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="css/base.css" type="text/css">
     <link rel="stylesheet" href="css/layout.css" type="text/css">
     <link rel="stylesheet" href="css/module.css" type="text/css">
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
   </head>
   <body id="body">
     <header>
@@ -45,6 +44,7 @@
           <div class="template">
             <h3>{{title}}</h3>
             <p>{{description}}</p>
+            <p>{{wordCount}}</p>
           </div>
         </div>
       </script>
@@ -65,8 +65,10 @@
       </p>
       <a href="#body">Top</a>
     </section>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
     <script type="text/javascript" src="data/projects.json"></script>
-    <script type="text/javascript" src="js/projects.js"></script>
+    <script type="text/javascript" src="js/models/projects.js"></script>
+    <script type="text/javascript" src="js/views/articleView.js"></script>
   </body>
 </html>
