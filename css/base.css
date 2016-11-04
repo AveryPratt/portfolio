@@ -32,9 +32,8 @@ a {
 li {
   list-style-type: none;
   background-color: #808080;
+  border-bottom: 1px solid #000000;
   padding: 10px 20px;
-  border-left: 1px solid #000000;
-  border-right: 1px solid #000000;
 }
 
 .section {

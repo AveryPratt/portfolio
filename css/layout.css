@@ -12,9 +12,14 @@ section.template{
 }
 
 nav {
-  float: right;
   clear: none;
   display: none;
+}
+
+ul {
+  margin-left: -10px;
+  padding: 0px;
+  width: 715px;
 }
 
 /*header {
@@ -26,5 +31,16 @@ nav {
 }
 
 @media only screen and (min-width: 715px){
+  ul {
+    width: auto;
+  }
 
+  nav {
+    float: right;
+  }
+
+  li{
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+  }
 }
