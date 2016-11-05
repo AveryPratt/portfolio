@@ -48,6 +48,6 @@ img {
   }
 
   li {
-    display: inline;
+    display: inline-block;
   }
 }
