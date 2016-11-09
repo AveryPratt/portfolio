@@ -49,6 +49,13 @@
         </div>
       </script>
     </section>
+    <section class="section" id="repos">
+      <h2>Repos</h2>
+      <script id="repo-template" type="text/x-handlebars-template">
+        <a href="{{html_url}}"><h3>{{name}}</h3></a>
+        <p>{{description}}</p>
+      </script>
+    </section>
     <section class="section" id="resume">
       <h2>Resume</h2>
       <p>
@@ -67,9 +74,12 @@
     </section>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <script type="text/javascript" src="githubToken.js"></script>
     <script type="text/javascript" src="data/projects.json"></script>
     <script type="text/javascript" src="js/models/projects.js"></script>
+    <script type="text/javascript" src="js/models/repo.js"></script>
     <script type="text/javascript" src="js/views/articleView.js"></script>
+    <script type="text/javascript" src="js/views/repoView.js"></script>
 
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
     <script type="text/javascript" src="js/controllers/aboutController.js"></script>

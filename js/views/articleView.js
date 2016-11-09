@@ -27,4 +27,4 @@
   articleView.handleHamburgerClick();
   articleView.handleScreenResize();
   module.articleView = articleView;
-}());
+})(window);
