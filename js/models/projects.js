@@ -1,12 +1,13 @@
 'use strict';
 
 (function(module){
-  var projects = [];
+  var project = {};
+  project.allProjects = [];
 
   function Project(options){
     this.title = options.title;
     this.description = options.description;
-    this.wordCount = countWordsInDescription(options);
+    this.wordCount = project.countWordsInDescription(options);
   }
   Project.prototype.toHTML = function(){
     var source = $('#projects-template').html();
@@ -14,35 +15,38 @@
     return templateRender(this);
   };
 
-  function countWordsInDescription(project){
-    return 'Words: ' + project.description.split(' ')
+  project.countWordsInDescription = function(proj){
+    return 'Words: ' + proj.description.split(' ')
     .map(function(){
       return 1;
     })
     .reduce(function(count, increment){
       return count + increment;
     }, 0);
-  }
-  function loadProjects(data){
+  };
+
+  project.loadProjects = function(data){
     data.forEach(function(item){
-      projects.push(new Project(item));
+      project.allProjects.push(new Project(item));
     });
-  }
-  function renderIndexPage(){
-    projects.forEach(function(project) {
-      $('section#projects').append(project.toHTML());
+  };
+
+  project.renderIndexPage = function(){
+    project.allProjects.forEach(function(proj) {
+      $('section#projects').append(proj.toHTML());
     });
-  }
-  function getNewProjects(){
+  };
+  project.getNewProjects = function(){
     $.getJSON( 'data/projects.json', function(data, msg, xhr) {
-      loadProjects(data);
+      project.loadProjects(data);
       var stringData = JSON.stringify(data);
       localStorage.setItem('blogArticles', stringData);
-      renderIndexPage();
+      project.renderIndexPage();
       localStorage.setItem('eTag', xhr.getResponseHeader('eTag'));
     });
-  }
-  (function fetchProjects() {
+  };
+
+  project.fetchProjects = function() {
     if (localStorage.projects) {
       $.ajax({
         type: 'HEAD',
@@ -52,17 +56,18 @@
           if(newETag === localStorage.getItem('eTag')){
             data = localStorage.getItem('projects');
             var parsedData = JSON.parse(data);
-            loadProjects(parsedData);
-            renderIndexPage();
+            project.loadProjects(parsedData);
+            project.renderIndexPage();
           }
           else{
-            getNewProjects();
+            project.getNewProjects();
           }
         }
       });
     } else {
-      getNewProjects();
+      project.getNewProjects();
     }
-  }());
-  module.Project = Project;
-}());
+  };
+
+  module.project = project;
+})(window);
