@@ -23,7 +23,7 @@
       });
     }
   };
-  articleView.handleMainNav();
+  project.fetchProjects();
   articleView.handleHamburgerClick();
   articleView.handleScreenResize();
   module.articleView = articleView;
