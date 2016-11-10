@@ -10,15 +10,10 @@
   repos.requestRepos = function(callback) {
     /* TODO: How would you like to fetch your repos? Someone say AJAX?!
       Do not forget to call the callback! */
-    $.ajax({
-      type: 'GET',
-      headers: {'Authorization': 'token ' + githubToken,},
-      url: 'https://api.github.com/users/dbecker4130/repos',
-      success: function(data) {
-        console.log(data);
-        repos.allRepos = data;
-        callback();
-      }
+    $.get('/github/users/AveryPratt/repos', function(data) {
+      console.log(data);
+      repos.allRepos = data;
+      callback();
     });
 
 
